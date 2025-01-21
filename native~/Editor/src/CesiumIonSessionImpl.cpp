@@ -153,7 +153,7 @@ void CesiumIonSessionImpl::Connect(
   }
 
   this->_isConnecting = true;
-
+  return;
   std::string ionServerUrl = server.serverUrl().ToStlString();
   std::string ionApiUrl = server.apiUrl().ToStlString();
 
@@ -271,6 +271,7 @@ void CesiumIonSessionImpl::Connect(
 
 void CesiumIonSessionImpl::Resume(
     const DotNet::CesiumForUnity::CesiumIonSession& session) {
+  return;
   CesiumForUnity::CesiumIonServer server = session.server();
   if (server == nullptr || this->IsConnecting(session) ||
       this->IsConnected(session) || this->IsResuming(session)) {
@@ -347,6 +348,7 @@ void CesiumIonSessionImpl::Resume(
 
 void CesiumIonSessionImpl::Disconnect(
     const DotNet::CesiumForUnity::CesiumIonSession& session) {
+  return;
   this->_connection.reset();
   this->_profile.reset();
   this->_assets.reset();
